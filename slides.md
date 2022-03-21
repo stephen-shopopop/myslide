@@ -37,7 +37,7 @@ Presentation slides for developers
   </button>
   <a href="https://www.shopopop.com" target="_blank" alt="Shopopop"
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <uim-rocket />
+    <uim:rocket />
   </a>
 </div>
 
