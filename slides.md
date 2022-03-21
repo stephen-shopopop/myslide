@@ -35,7 +35,7 @@ Presentation slides for developers
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
+  <a href="https://www.shopopop.com" target="_blank" alt="Shopopop"
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <<uim-rocket />
   </a>
