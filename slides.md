@@ -12,7 +12,7 @@ highlighter: shiki
 lineNumbers: false
 # some information about the slides, markdown enabled
 info: |
-  ## Slidev Starter Template
+  ## Team's Shopopop
   Presentation slides for developers.
 
   Learn more at [Sli.dev](https://sli.dev)
@@ -21,7 +21,7 @@ drawings:
   persist: false
 ---
 
-# Welcome to Slidev
+# Welcome to team's Shopopop
 
 Presentation slides for developers
 
@@ -37,7 +37,7 @@ Presentation slides for developers
   </button>
   <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
+    <<uim-rocket />
   </a>
 </div>
 
