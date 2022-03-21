@@ -19,6 +19,14 @@ info: |
 # persist drawings in exports and build
 drawings:
   persist: false
+# Fonts
+fonts:
+  # le texte
+  sans: 'Robot'
+  # utiliser avec la classe css `font-serif` de windicss
+  serif: 'Robot Slab'
+  # pour les blocs de code, le code en ligne, etc.
+  mono: 'Fira Code'
 ---
 
 # Welcome to team's Shopopop
