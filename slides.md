@@ -47,7 +47,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
-# What is Slidev?
+# Summary
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
 
