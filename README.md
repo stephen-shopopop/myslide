@@ -22,9 +22,9 @@ npm i -g @slidev/cli
 And anywhere use command:
 
 ```
-slidev 
+slidev // if file not exist a default template is create
 
 or 
 
-slidev README.md
+slidev myslide.md // specific file
 ```
