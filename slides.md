@@ -240,7 +240,7 @@ const myEvents = new EventEmitter() as TypedPartialEventEmitter<Events>;
 myEvents.emit(Event, "hello");
 ```
 
---
+---
 layout: cover
 class: text-center
 ---
@@ -321,7 +321,7 @@ class: text-center
 
 <br>
 
-<img src="https://tech.gojob.com/static/07b2e4403c83a8b377ad14ab3589044c/41704/clean-archi.avif" class="m-auto" />
+<img src="https://tech.gojob.com/static/07b2e4403c83a8b377ad14ab3589044c/41704/clean-archi.avif" class="m-auto h-60" />
 
 ---
 layout: center
