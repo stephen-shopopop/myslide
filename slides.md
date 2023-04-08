@@ -97,6 +97,13 @@ myEmitter.emit('event');
 ---
 layout: center
 ---
+# Aller plus loin dans les origines
+
+EventEmitter utilise les cycles de boucle d'événements de base de LibUV pour délivrer des événements et exécuter des rappels, ce qui signifie que lorsque vous émettez un événement, il va être ajouté dans la pile de déclenchement d'événements de LibUV pour être déclenché lorsqu'il y a un temps de synchronisation disponible pour cette opération.
+
+---
+layout: center
+---
 
 # Passez des arguments
 
