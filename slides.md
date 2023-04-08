@@ -64,7 +64,7 @@ class: text-center
 console.log('Hello, World!')
 ```
 
-<img src="https://nodejs.dev/static/images/brand/logos-js-right/dark.svg" class="m-40 h-40" />
+<img src="https://nodejs.dev/static/images/brand/logos-js-right/light.svg" class="m-auto" />
 
 ---
 
