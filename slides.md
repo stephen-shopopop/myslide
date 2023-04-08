@@ -67,6 +67,8 @@ const eventEmitter = new EventEmitter();
 <img src="https://nodejs.dev/static/images/brand/logos-js-right/light.svg" class="m-auto" />
 
 ---
+layout: center
+---
 
 # En savoir plus ...
 
@@ -75,6 +77,12 @@ const eventEmitter = new EventEmitter();
 - [Documentation events](https://nodejs.org/api/events.html#events)
 - [Nodejs Dependencies](https://nodejs.org/en/docs/meta/topics/dependencies)
 - [libvu](https://libuv.org)
+
+---
+layout: iframe
+
+# la source de la page Web
+url: https://github.com/slidevjs/slidev
 
 ---
 
