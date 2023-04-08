@@ -70,6 +70,74 @@ const eventEmitter = new EventEmitter();
 layout: center
 ---
 
+Une grande partie de l'API principale de Node.js est construite autour d'une architecture événementielle asynchrone idiomatique dans laquelle certains types d'objets (appelés "émetteurs") émettent des événements nommés qui provoquent l'appel d'objets Function ("auditeurs").
+
+Par exemple : un objet net.Server émet un événement chaque fois qu'un pair s'y connecte ; un fs.ReadStream émet un événement lorsque le fichier est ouvert ; un flux émet un événement chaque fois que des données sont disponibles pour être lues.
+
+---
+layout: center
+---
+
+Tous les objets qui émettent des événements sont des instances de la classe EventEmitter. Ces objets exposent une fonction eventEmitter.on() qui permet d'attacher une ou plusieurs fonctions à des événements nommés émis par l'objet. Généralement, les noms d'événements sont des chaînes en casse camel, mais n'importe quelle clé de propriété JavaScript (ex: Symbol) valide peut être utilisée.
+
+Lorsque l'objet EventEmitter émet un événement, toutes les fonctions attachées à cet événement spécifique sont appelées de manière synchrone. Toutes les valeurs renvoyées par les écouteurs appelés sont ignorées et rejetées.
+
+```
+import { EventEmitter } from 'node:events';
+
+const myEmitter = new EventEmitter();
+
+myEmitter.on('event', () => {
+  console.log('an event occurred!');
+});
+
+myEmitter.emit('event');
+```
+
+---
+layout: center
+---
+
+# Passez des arguments
+
+La méthode eventEmitter.emit() permet de transmettre un ensemble arbitraire d'arguments aux fonctions d'écoute. Gardez à l'esprit que lorsqu'une fonction d'écouteur ordinaire est appelée, la norme this mot-clé est intentionnellement définie pour référencer l'instance EventEmitter à laquelle l'écouteur est attaché.
+
+```ts
+import { EventEmitter } from 'node:events';
+
+const myEmitter = new EventEmitter();
+
+myEmitter.on('event', function(a, b) {
+  console.log(a, b, this, this === myEmitter);
+});
+
+myEmitter.emit('event', 'a', 'b');
+```
+
+---
+layout: center
+---
+
+L'EventEmitter appelle tous les écouteurs de manière synchrone dans l'ordre dans lequel ils ont été enregistrés. Cela garantit le bon séquencement des événements et permet d'éviter les conditions de course et les erreurs logiques. Le cas échéant, les fonctions d'écoute peuvent basculer vers un mode de fonctionnement asynchrone à l'aide de setImmediate() ou process.nextTick()
+
+```ts
+import { EventEmitter } from 'node:events';
+
+const myEmitter = new EventEmitter();
+
+myEmitter.on('event', (a, b) => {
+  setImmediate(() => {
+    console.log('this happens asynchronously');
+  });
+});
+
+myEmitter.emit('event', 'a', 'b');
+```
+
+---
+layout: center
+---
+
 # En savoir plus ...
 
 - [EventEmitter](https://nodejs.dev/fr/learn/the-nodejs-event-emitter/)
