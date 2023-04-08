@@ -1,6 +1,12 @@
 ---
 # try also 'default' to start simple
 theme: seriph
+# titleTemplate pour la page Web, `%s` sera remplacé par le titre de la page
+titleTemplate: '%s - EventEmitter'
+# téléchargement de pdf activé dans la version SPA, peut également être une URL personnalisée
+download: true
+# nom de fichier du fichier d'exportation
+exportFilename: 'eventEmitter-exported'
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://source.unsplash.com/collection/298137/1920x1080
