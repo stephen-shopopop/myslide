@@ -162,7 +162,7 @@ layout: center
 
 ## Les écouteurs.
 
-Le problème d'avoir trop d'écouteurs. Par défaut, EventEmitter veut que nous maintenions le nombre d'écoiteurs aussi bas que possible car sur chacun, il exécute une boucle de synchronisation sur les rappels, ce qui bloque toute la boucle d'événements.
+Le problème d'avoir trop d'écouteurs. Par défaut, EventEmitter veut que nous maintenions le nombre d'écouteurs aussi bas que possible car sur chacun, il exécute une boucle de synchronisation sur les rappels, ce qui bloque toute la boucle d'événements.
 
 La limite initiale est de seulement 25 abonnés par événement, ce qui est tout à fait acceptable pour une application moyenne, MAIS vous pouvez augmenter ce nombre autant que vous le souhaitez. Le principal inconvénient d'avoir de grands nombres est le coût des performances du processeur qui en découle.
 
