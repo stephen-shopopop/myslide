@@ -199,6 +199,40 @@ type Events = { ["myEvent"]: (event: string) => Promise<void>; }
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png" class="m-auto h-10" />
 
 ---
+
+# Typage EventEmitter
+
+Typage partielle de la classe EventEmitter
+
+```ts
+type ListenerSignature<L> = {
+  [E in keyof L]: (...args: any[]) => any;
+}
+
+interface TypedPartialEventEmitter<Events extends ListenerSignature<Events>> {
+  on: <E extends keyof Events>(event: E, listener: Events[E]) => this;
+  emit: <E extends keyof Events>(event: E, ...args: Parameters<Events[E]>) => boolean;
+}
+```
+
+---
+
+# Usage exemple
+
+```ts
+const Event = Symbol("Event");
+
+type Events = {
+  [Event]: (event: number) => Promise<void>;
+}
+
+const myEvents = new EventEmitter() as TypedPartialEventEmitter<Events>;
+
+// => type '"hello"' is not assignable to parameter of type 'number'
+myEvents.emit(Event, "hello");
+```
+
+---
 layout: iframe
 url: https://github.com/slidevjs/slidev
 
