@@ -198,7 +198,7 @@ type Events = { ["myEvent"]: (event: string) => Promise<void>; }
 
 <br>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png" class="m-auto" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png" class="m-auto h-40" />
 
 ---
 
