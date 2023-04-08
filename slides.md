@@ -15,7 +15,7 @@ class: 'text-center'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
-lineNumbers: false
+lineNumbers: true
 # some information about the slides, markdown enabled
 info: |
   ## Team's Shopopop
@@ -100,7 +100,7 @@ Tous les objets qui émettent des événements sont des instances de la classe E
 
 Lorsque l'objet EventEmitter émet un événement, toutes les fonctions attachées à cet événement spécifique sont appelées de manière synchrone. Toutes les valeurs renvoyées par les écouteurs appelés sont ignorées et rejetées.
 
-```
+```ts
 import { EventEmitter } from 'node:events';
 
 const myEmitter = new EventEmitter();
