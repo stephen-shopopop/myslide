@@ -168,6 +168,14 @@ Lorsque vous faites tourner N fois une opération asynchrone, cela crée une fil
 layout: center
 ---
 
+# Conclusion
+
+EventEmitter n'est pas pour chaque cas d'utilisation d'application, et vous pouvez certainement le remplacer par une implémentation personnalisée, MAIS le plus important est de garder à l'esprit qu'EventEmitter est lié aux événements de LibUV qui est le principal moteur de boucle d'événements pour Node .js.
+
+---
+layout: center
+---
+
 # En savoir plus ...
 
 - [EventEmitter](https://nodejs.dev/fr/learn/the-nodejs-event-emitter/)
