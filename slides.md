@@ -194,7 +194,7 @@ class: text-center
 
 ```ts
 type Events = {
-  [myEvent]: (event: string) => Promise<void>;
+  ["myEvent"]: (event: string) => Promise<void>;
 }
 ```
 
