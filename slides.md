@@ -54,8 +54,15 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+layout: cover
+class: text-center
+---
 
 # Classe EventEmitter
+
+//```ts
+console.log('Hello, World!')
+//`
 
 ![Nodejs logo](https://nodejs.dev/static/images/brand/logos-js-right/dark.svg)
 
