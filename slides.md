@@ -61,7 +61,7 @@ class: text-center
 # Classe EventEmitter
 
 ```ts
-console.log('Hello, World!')
+const eventEmitter = new EventEmitter();
 ```
 
 <img src="https://nodejs.dev/static/images/brand/logos-js-right/light.svg" class="m-auto" />
