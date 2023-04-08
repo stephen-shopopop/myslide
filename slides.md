@@ -240,6 +240,65 @@ const myEvents = new EventEmitter() as TypedPartialEventEmitter<Events>;
 myEvents.emit(Event, "hello");
 ```
 
+--
+layout: cover
+class: text-center
+---
+
+# Architecture 3 tiers
+
+<br>
+
+<img src="https://practica.dev/assets/images/3-tiers-fb96effa6ad8f8f08b594f3455628305.png" class="m-auto" />
+
+---
+layout: center
+class: text-center
+---
+
+# Entrypoints
+
+C'est la porte de l'application où les flux commencent et les demandes arrivent. Notre exemple de composant a une API REST (c'est-à-dire des contrôleurs d'API), c'est un type de point d'entrée. Il peut y avoir d'autres points d'entrée comme une tâche planifiée, une CLI, une file d'attente de messages, etc. Quel que soit le point d'entrée avec lequel vous traitez, la responsabilité de cette couche est minime - recevoir les demandes, effectuer l'authentification, transmettre la demande au code interne et gérer les erreurs. Par exemple, un contrôleur reçoit une demande d'API, puis il ne fait rien de plus que d'authentifier l'utilisateur, d'extraire la charge utile et d'appeler une fonction de couche de domaine.
+
+---
+layout: center
+class: text-center
+---
+
+# Domain
+
+Un dossier contenant le cœur de l'application où les flux, la logique et la structure des données sont définis. Ses fonctions peuvent desservir n'importe quel type de points d'entrée - qu'il soit appelé depuis l'API ou la file d'attente de messages, la couche de domaine est indépendante de la source de l'appelant. Le code ici peut appeler d'autres services via HTTP/file d'attente. Il est également probable qu'il récupère et enregistre des informations dans une base de données, pour cela, il appellera la couche d'accès aux données.
+
+---
+layout: center
+class: text-center
+---
+
+
+# Data-access
+
+L'intégralité de la fonctionnalité et de la configuration de votre interaction avec la base de données est conservée dans ce dossier.
+
+---
+layout: cover
+class: text-center
+---
+
+# Clean architecture
+
+<br>
+
+<img src="https://tech.gojob.com/static/07b2e4403c83a8b377ad14ab3589044c/41704/clean-archi.avif" class="m-auto" />
+
+---
+layout: center
+class: text-center
+---
+
+# Adapater
+
+<img src="https://tech.gojob.com/static/ba97fa41d5304cf9c3fc6171602eea1f/a2baf/adapters-and-ports.avif" class="m-auto" />
+
 ---
 layout: center
 class: text-center
