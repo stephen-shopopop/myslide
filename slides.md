@@ -55,6 +55,23 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
+# Classe EventEmitter
+
+![Nodejs logo](https://nodejs.dev/static/images/brand/logos-js-right/dark.svg)
+
+
+---
+
+# En savoir plus ...
+
+- [EventEmitter](https://nodejs.dev/fr/learn/the-nodejs-event-emitter/)
+- [Nodejs doc api](https://nodejs.dev/fr/api/v19/events/)
+- [Documentation events](https://nodejs.org/api/events.html#events)
+- [Nodejs Dependencies](https://nodejs.org/en/docs/meta/topics/dependencies)
+- [libvu](https://libuv.org)
+
+---
+
 # Summary
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
