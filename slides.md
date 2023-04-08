@@ -62,10 +62,9 @@ class: text-center
 
 //```ts
 console.log('Hello, World!')
-//`
+//```
 
-![Nodejs logo](https://nodejs.dev/static/images/brand/logos-js-right/dark.svg)
-
+<img src="https://nodejs.dev/static/images/brand/logos-js-right/dark.svg" class="block" />
 
 ---
 
