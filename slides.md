@@ -80,6 +80,14 @@ Par exemple : un objet net.Server émet un événement chaque fois qu'un pair s'
 layout: center
 ---
 
+# Aller plus loin dans les origines
+
+EventEmitter utilise les cycles de boucle d'événements de base de LibUV pour délivrer des événements et exécuter des rappels, ce qui signifie que lorsque vous émettez un événement, il va être ajouté dans la pile de déclenchement d'événements de LibUV pour être déclenché lorsqu'il y a un temps de synchronisation disponible pour cette opération.
+
+---
+layout: center
+---
+
 # EventEmitter
 
 Tous les objets qui émettent des événements sont des instances de la classe EventEmitter. Ces objets exposent une fonction eventEmitter.on() qui permet d'attacher une ou plusieurs fonctions à des événements nommés émis par l'objet. Généralement, les noms d'événements sont des chaînes en casse camel, mais n'importe quelle clé de propriété JavaScript (ex: Symbol) valide peut être utilisée.
@@ -97,14 +105,6 @@ myEmitter.on('event', () => {
 
 myEmitter.emit('event');
 ```
-
----
-layout: center
----
-
-# Aller plus loin dans les origines
-
-EventEmitter utilise les cycles de boucle d'événements de base de LibUV pour délivrer des événements et exécuter des rappels, ce qui signifie que lorsque vous émettez un événement, il va être ajouté dans la pile de déclenchement d'événements de LibUV pour être déclenché lorsqu'il y a un temps de synchronisation disponible pour cette opération.
 
 ---
 layout: center
