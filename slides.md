@@ -280,6 +280,39 @@ class: text-center
 L'intégralité de la fonctionnalité et de la configuration de votre interaction avec la base de données est conservée dans ce dossier.
 
 ---
+layout: center
+class: text-center
+---
+
+# Organisez votre projet en composants
+
+Le pire obstacle des énormes applications est la maintenance d'une base de code immense contenant des centaines de dépendances - un tel monolithe ralentit les développeurs tentant d'ajouter de nouvelles fonctionnalités. Pour éviter cela, répartissez votre code en composants, chacun dans son dossier avec son code dédié, et assurez vous que chaque unité soit courte et simple. Visitez le lien « Plus d'infos » plus bas pour voir des exemples de structure de projet correcte.
+
+Autrement : Lorsque les développeurs qui codent de nouvelles fonctionnalités ont du mal à réaliser l'impact de leur changement et craignent de casser d'autres composants dépendants - les déploiements deviennent plus lents et plus risqués. Il est aussi considéré plus difficile d'élargir un modèle d'application quand les unités opérationnelles ne sont pas séparées.
+
+---
+layout: center
+class: text-center
+---
+
+# Organisez vos composants en strates, gardez la couche web à l'intérieur de son périmètre
+
+Chaque composant devrait contenir des « strates » - un objet dédié pour le web, un pour la logique et un pour le code d'accès aux données. Cela permet non seulement de séparer clairement les responsabilités mais permet aussi de simuler et de tester le système de manière plus simple. Bien qu'il s'agisse d'un modèle très courant, les développeurs d'API ont tendance à mélanger les strates en passant l'objet dédié au web (Par exemple Express req, res) à la logique opérationnelle et aux strates de données - cela rend l'application dépendante et accessible seulement par les frameworks web spécifiques.
+
+Autrement : Les tests, les jobs CRON, les déclencheurs des files d'attente de messages et etc ne peuvent pas accéder à une application qui mélange les objets web avec les autres strates.
+
+---
+layout: center
+class: text-center
+---
+
+# Externalisez les utilitaires communs en paquets NPM
+
+Dans une grande appli rassemblant de nombreuses lignes de codes, les utilitaires opérant sur toutes les strates comme un logger, l'encryption et autres, devraient être inclus dans le code et exposés en tant que paquets NPM privés. Cela permet leur partage au sein de plusieurs projets.
+
+Autrement : Vous devrez inventer votre propre roue de déploiement et de dépendance
+
+---
 layout: cover
 class: text-center
 ---
