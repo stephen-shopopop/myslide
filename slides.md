@@ -70,6 +70,8 @@ const eventEmitter = new EventEmitter();
 layout: center
 ---
 
+# Architecture événementielle
+
 Une grande partie de l'API principale de Node.js est construite autour d'une architecture événementielle asynchrone idiomatique dans laquelle certains types d'objets (appelés "émetteurs") émettent des événements nommés qui provoquent l'appel d'objets Function ("auditeurs").
 
 Par exemple : un objet net.Server émet un événement chaque fois qu'un pair s'y connecte ; un fs.ReadStream émet un événement lorsque le fichier est ouvert ; un flux émet un événement chaque fois que des données sont disponibles pour être lues.
@@ -77,6 +79,8 @@ Par exemple : un objet net.Server émet un événement chaque fois qu'un pair s'
 ---
 layout: center
 ---
+
+# EventEmitter
 
 Tous les objets qui émettent des événements sont des instances de la classe EventEmitter. Ces objets exposent une fonction eventEmitter.on() qui permet d'attacher une ou plusieurs fonctions à des événements nommés émis par l'objet. Généralement, les noms d'événements sont des chaînes en casse camel, mais n'importe quelle clé de propriété JavaScript (ex: Symbol) valide peut être utilisée.
 
@@ -97,6 +101,7 @@ myEmitter.emit('event');
 ---
 layout: center
 ---
+
 # Aller plus loin dans les origines
 
 EventEmitter utilise les cycles de boucle d'événements de base de LibUV pour délivrer des événements et exécuter des rappels, ce qui signifie que lorsque vous émettez un événement, il va être ajouté dans la pile de déclenchement d'événements de LibUV pour être déclenché lorsqu'il y a un temps de synchronisation disponible pour cette opération.
@@ -125,6 +130,8 @@ myEmitter.emit('event', 'a', 'b');
 layout: center
 ---
 
+# EventEmitter asynchrone
+
 L'EventEmitter appelle tous les écouteurs de manière synchrone dans l'ordre dans lequel ils ont été enregistrés. Cela garantit le bon séquencement des événements et permet d'éviter les conditions de course et les erreurs logiques. Le cas échéant, les fonctions d'écoute peuvent basculer vers un mode de fonctionnement asynchrone à l'aide de setImmediate() ou process.nextTick()
 
 ```ts
@@ -140,6 +147,22 @@ myEmitter.on('event', (a, b) => {
 
 myEmitter.emit('event', 'a', 'b');
 ```
+
+---
+layout: center
+---
+
+# Issues EventEmitter
+
+## Les écouteurs.
+
+Le problème d'avoir trop d'écouteurs. Par défaut, EventEmitter veut que nous maintenions le nombre d'écoiteurs aussi bas que possible car sur chacun, il exécute une boucle de synchronisation sur les rappels, ce qui bloque toute la boucle d'événements.
+
+La limite initiale est de seulement 25 abonnés par événement, ce qui est tout à fait acceptable pour une application moyenne, MAIS vous pouvez augmenter ce nombre autant que vous le souhaitez. Le principal inconvénient d'avoir de grands nombres est le coût des performances du processeur qui en découle.
+
+## Le problème du maintien du niveau de concurrence.
+
+Lorsque vous faites tourner N fois une opération asynchrone, cela crée une file d'attente de promesses dans le pool de threads, cela signifie que si vous émettez un événement (qui est synchronisé), N fois la file d'attente se développe de la même manière. Pour Node.js, cela pourrait entraîner des plantages de dépassement de mémoire ou d'autres erreurs inattendues.
 
 ---
 layout: center
