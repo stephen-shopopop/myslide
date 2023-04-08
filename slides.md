@@ -69,7 +69,7 @@ const eventEmitter = new EventEmitter();
 ---
 layout: center
 ---
-Mises en page | Slidev
+
 # Architecture événementielle
 
 Une grande partie de l'API principale de Node.js est construite autour d'une architecture événementielle asynchrone idiomatique dans laquelle certains types d'objets (appelés "émetteurs") émettent des événements nommés qui provoquent l'appel d'objets Function ("auditeurs").
@@ -193,12 +193,10 @@ class: text-center
 # Typescript EventEmitter
 
 ```ts
-type Events = {
-  ["myEvent"]: (event: string) => Promise<void>;
-}
+type Events = { ["myEvent"]: (event: string) => Promise<void>; }
 ```
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png" class="m-auto" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png" class="m-auto h-10" />
 
 ---
 layout: iframe
