@@ -60,11 +60,11 @@ class: text-center
 
 # Classe EventEmitter
 
-//```ts
+```ts
 console.log('Hello, World!')
-//```
+```
 
-<img src="https://nodejs.dev/static/images/brand/logos-js-right/dark.svg" class="block" />
+<img src="https://nodejs.dev/static/images/brand/logos-js-right/dark.svg" class="m-40 h-40" />
 
 ---
 
