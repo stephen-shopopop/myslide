@@ -235,7 +235,7 @@ class: text-center
 
 <br>
 
-<img src="https://practica.dev/assets/images/3-tiers-fb96effa6ad8f8f08b594f3455628305.png" class="m-auto" />
+<img src="/74C38AFF-F646-4ED0-A9A6-D85DF56062E5.png" class="m-auto" />
 
 ---
 layout: center
