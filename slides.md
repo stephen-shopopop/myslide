@@ -7,6 +7,12 @@ download: true
 # enable slide recording, can be boolean, 'dev' or 'build'
 record: 'build'
 exportFilename: eventEmitter-exported
+export:
+  format: pdf
+  timeout: 30000
+  dark: false
+  withClicks: false
+  withToc: false
 background: https://source.unsplash.com/collection/298137/1920x1080
 class: text-center
 highlighter: shiki
