@@ -307,7 +307,7 @@ class: text-center
 
 <br>
 
-<img src="https://tech.gojob.com/static/07b2e4403c83a8b377ad14ab3589044c/41704/clean-archi.avif" class="m-auto h-60" />
+<img src="/356E80C1-ABBE-4D95-B05F-4848F9966C11.jpeg" class="m-auto h-60" />
 
 ---
 layout: center
@@ -316,7 +316,7 @@ class: text-center
 
 # Adapters
 
-<img src="https://tech.gojob.com/static/ba97fa41d5304cf9c3fc6171602eea1f/a2baf/adapters-and-ports.avif" class="m-auto" />
+<img src="/0E82E760-E764-4B5A-87B1-882F5D0AD736.jpeg" class="m-auto" />
 
 ---
 layout: center
