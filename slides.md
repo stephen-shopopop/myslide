@@ -1,38 +1,24 @@
 ---
-# try also 'default' to start simple
 theme: seriph
-# titleTemplate pour la page Web, `%s` sera remplacé par le titre de la page
 titleTemplate: '%s - EventEmitter'
-# téléchargement de pdf activé dans la version SPA, peut également être une URL personnalisée
 download: true
-# nom de fichier du fichier d'exportation
-exportFilename: 'eventEmitter-exported'
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
+exportFilename: eventEmitter-exported
 background: https://source.unsplash.com/collection/298137/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
+class: text-center
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: true
-# some information about the slides, markdown enabled
 info: |
   ## Team's Shopopop
   Presentation slides for developers.
 
   Learn more at [Sli.dev](https://sli.dev)
-# persist drawings in exports and build
 drawings:
   persist: false
-# Fonts
 fonts:
-  # le texte
-  sans: 'Robot'
-  # utiliser avec la classe css `font-serif` de windicss
-  serif: 'Robot Slab'
-  # pour les blocs de code, le code en ligne, etc.
-  mono: 'Fira Code'
+  sans: Robot
+  serif: Robot Slab
+  mono: Fira Code
+title: Welcome to team's Shopopop
 ---
 
 # Welcome to team's Shopopop
@@ -328,7 +314,7 @@ layout: center
 class: text-center
 ---
 
-# Adapater
+# Adapters
 
 <img src="https://tech.gojob.com/static/ba97fa41d5304cf9c3fc6171602eea1f/a2baf/adapters-and-ports.avif" class="m-auto" />
 

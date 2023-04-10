@@ -6,12 +6,12 @@
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.28.10",
+    "@slidev/cli": "^0.40.9",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
   "name": "apm-sentry",
   "devDependencies": {
-    "playwright-chromium": "^1.20.0"
+    "playwright-chromium": "^1.32.2"
   }
 }
