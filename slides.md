@@ -1,7 +1,11 @@
 ---
 theme: seriph
 titleTemplate: '%s - EventEmitter'
+# enable presenter mode, can be boolean, 'dev' or 'build'
+presenter: true
 download: true
+# enable slide recording, can be boolean, 'dev' or 'build'
+record: 'build'
 exportFilename: eventEmitter-exported
 background: https://source.unsplash.com/collection/298137/1920x1080
 class: text-center
