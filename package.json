@@ -10,7 +10,7 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "name": "apm-sentry",
+  "name": "mySlides",
   "devDependencies": {
     "playwright-chromium": "^1.32.2"
   }
