@@ -90,6 +90,18 @@ EventEmitter utilise les cycles de boucle d'événements de base de LibUV pour d
 layout: center
 ---
 
+# Event loop
+
+__Boucle d'événement ou d'E/S__: la boucle d'événement ou d'E/S utilise une approche d'E/S asynchrone à un seul thread, elle est donc liée à un seul thread. Pour exécuter plusieurs boucles d'événements, chacune de ces boucles d'événements doit être exécutée sur un thread différent.
+
+Libuv maintient une file d'attente d'événements et un démultiplexeur d'événements. La boucle écoute les E/S entrantes et émet un événement pour chaque requête. Les requêtes sont ensuite affectées à un gestionnaire spécifique (dépendant du système d'exploitation). Après une exécution réussie, le rappel enregistré est mis en file d'attente dans la file d'attente des événements qui sont exécutés en continu un par un.
+
+__Exemple__: si une demande réseau est effectuée, un rappel est enregistré pour cette demande et la tâche est affectée au gestionnaire. Jusqu'à ce qu'il soit effectué, d'autres opérations se poursuivent. En cas d'exécution/d'arrêt réussi, le rappel enregistré est mis en file d'attente dans la file d'attente d'événements qui est ensuite exécutée par le thread principal après l'exécution des rappels précédents déjà présents dans la file d'attente.
+
+---
+layout: center
+---
+
 # EventEmitter
 
 Tous les objets qui émettent des événements sont des instances de la classe EventEmitter. Ces objets exposent une fonction eventEmitter.on() qui permet d'attacher une ou plusieurs fonctions à des événements nommés émis par l'objet. Généralement, les noms d'événements sont des chaînes en casse camel, mais n'importe quelle clé de propriété JavaScript (ex: Symbol) valide peut être utilisée.
@@ -185,7 +197,7 @@ layout: center
 - [Documentation events](https://nodejs.org/api/events.html#events)
 - [Nodejs Dependencies](https://nodejs.org/en/docs/meta/topics/dependencies)
 - [libvu](https://libuv.org)
-
+- [libvu/nodejs](https://codeahoy.com/learn/libuv/ch1/)
 
 ---
 layout: cover
